@@ -11,6 +11,8 @@ slt.subheader(f"{data_option} for the next {forecast_days} days in {place}")
 
 dates = ["2025-10-09", "2025-10-10", "2025-10-11"]
 temperatures = [10, 11, 15]
+
+temperatures = [forecast_days * i for i in temperatures]
 graph = pltexp.line(x=dates, y=temperatures, labels={"x":"Date",
                                                      "y":"Temperature (C)"})
 slt.plotly_chart(graph)
